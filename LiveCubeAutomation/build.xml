@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+
+<project name="LiveCube" default="All" basedir=".">
+
+  <!--clean up the last run-->
+  <target name="clean">
+    <echo message="Deleteing Log directory..."/>
+    <delete dir="reports"/>
+    <mkdir dir="reports"/>
+  </target>
+
+  <!--Run all test cases-->
+  <target name="All" depends="clean">
+    <echo message="Executing test suite "/>
+    <exec dir="." executable="cmd" failonerror="true">
+      <arg line="/c rspec --format html --out reports/report.html test_suite.rb"/>
+    </exec>
+  </target>
+
+
+  <!--Run Scenario test create meeting-->
+  <target name="TestCreateMeeting" depends="clean">
+    <echo message="Executing TestCreateMeeting"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/TestCreateMeeting.html scripts/TestCreateMeeting.rb"/>
+    </exec>
+  </target>
+
+
+  <!--Run Scenario test create session -->
+  <target name="TestCreateSession" depends="clean">
+    <echo message="Executing TestCreateSession"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/TestCreateSession.html scripts/TestCreateSession.rb"/>
+    </exec>
+  </target>
+
+  <!--Run Scenario test create speaker -->
+  <target name="TestCreateSpeaker" depends="clean">
+    <echo message="Executing TestCreateSpeaker"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/TestCreateSpeaker.html scripts/TestCreateSpeaker.rb"/>
+    </exec>
+  </target>
+
+  <!--Run Scenario test create survey -->
+  <target name="TestCreateSurvey" depends="clean">
+    <echo message="Executing TestCreateSurvey"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/TestCreateSurvey.html scripts/TestCreateSurvey.rb"/>
+    </exec>
+  </target>
+
+
+  <!--Run Scenario test create Prize -->
+  <target name="TestCreatePrize" depends="clean">
+    <echo message="Executing TestCreatePrize"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/TestCreatePrize.html scripts/TestCreatePrize.rb"/>
+    </exec>
+  </target>
+
+
+  <!--Run Scenario test TestCreateDeleteTeam -->
+  <target name="TestCreateDeleteTeam" depends="clean">
+    <echo message="Executing TestCreateDeleteTeam"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/TestCreateDeleteTeam.html scripts/TestCreateDeleteTeam.rb"/>
+    </exec>
+  </target>
+
+  <!--Run Scenario test TestProjectView -->
+  <target name="TestProjectView" depends="clean">
+    <echo message="Executing TestProjectView"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/TestProjectView.html scripts/TestProjectView.rb"/>
+    </exec>
+  </target>
+
+
+  <!--Run the Scenario add New IceBreaker  -->
+  <target name="TestCreateNewIceBreaker" depends="clean">
+    <echo message="Executing TestCreateNewIceBreaker"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/TestCreateNewIceBreaker.html scripts/TestCreateNewIceBreaker.rb"/>
+    </exec>
+  </target>
+
+
+  <!--Run the Scenario login with twitter  -->
+  <target name="LoginWithTwitter" depends="clean">
+    <echo message="Executing LoginWithTwitter"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/LoginWithTwitter.html scripts/LoginWithTwitter.rb"/>
+    </exec>
+  </target>
+
+  <!--Run the Scenario Forgot password  -->
+  <target name="ForgotPasswordTwitter" depends="clean">
+    <echo message="Executing ForgotPasswordTwitter"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/ForgotPasswordTwitter.html scripts/ForgotPasswordTwitter.rb"/>
+    </exec>
+  </target>
+
+  <!--Run the Scenario Add join session  -->
+  <target name="AddJoinSession" depends="clean">
+    <echo message="Executing AddJoinSession"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/AddJoinSession.html scripts/AddJoinSession.rb"/>
+    </exec>
+  </target>
+
+  <!--Run the Scenario create and delete post  -->
+  <target name="CreateRemovePost" depends="clean">
+    <echo message="Executing CreateRemovePost"/>
+    <exec dir="." executable="cmd" >
+      <arg line="/c rspec --format html --out reports/CreateRemovePost.html scripts/CreateRemovePost.rb"/>
+    </exec>
+  </target>
+
+
+</project>
+
