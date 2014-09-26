@@ -1,8 +1,7 @@
-require "test/unit"
-require "selenium-webdriver"
-include Test::Unit::Assertions
 
-class SupportHelper < Test::Unit::TestCase
+require "selenium-webdriver"
+
+class SupportHelper
     
 	def initialize(driver)
 		@driver = driver

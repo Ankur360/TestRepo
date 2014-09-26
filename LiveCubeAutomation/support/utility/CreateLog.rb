@@ -1,11 +1,10 @@
 
-
 class CreateLog
 
 	def LogStartExecution(message)
 		time2 = Time.now
 		message = time2.strftime("%Y-%m-%d %H:%M:%S")+ " [Info] "+ message
-		filename = "Report"+time2.strftime("%Y-%m-%d")+".text"
+		filename = "ReportLog.text" 
 		File.open "executionlog/"+filename, "a+" do |file|		
 			file.write("*****************************************************************************\n")
 			file.write(message+"\n")
@@ -16,7 +15,7 @@ class CreateLog
 	def LogEndExecution(message)
 		time2 = Time.now
 		message = time2.strftime("%Y-%m-%d %H:%M:%S")+ " [Info] "+ message
-		filename = "Report"+time2.strftime("%Y-%m-%d")+".text"
+		filename = "ReportLog.text"
 		File.open "executionlog/"+filename, "a+" do |file|
 			file.write(message+"\n")
 			file.write("*****************************************************************************\n")
@@ -26,7 +25,7 @@ class CreateLog
 	def Log(message)
 		time2 = Time.now
 		message = time2.strftime("%Y-%m-%d %H:%M:%S")+ " [Info] "+ message
-		filename = "Report"+time2.strftime("%Y-%m-%d")+".text"
+		filename = "ReportLog.text"
 		File.open "executionlog/"+filename, "a+" do |file|
 			file.write(message+"\n")			
 		end
